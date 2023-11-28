@@ -1,0 +1,37 @@
+.sidebar-body{
+    margin: 15px;
+}
+
+.sidenav-item{
+    padding: 12px;
+    cursor: pointer;
+    img{
+        vertical-align: middle;
+    }
+    span{
+        padding-left: 15px;
+        color: #B2B2B2;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.header-logo{
+    margin: auto;
+    display: block;
+    width: 70%;
+    height: 45px;
+}
+
+.is-active{
+    background: #21B873 !important;
+    border-radius: 10px;
+    img{
+        filter: brightness(0) invert(1);
+    }
+    span{
+        color: #FFFFFF !important;
+        background: #21B873 !important;
+    }
+}

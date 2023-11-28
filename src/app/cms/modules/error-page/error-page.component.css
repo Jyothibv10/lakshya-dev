@@ -1,0 +1,20 @@
+img{
+    height: 200px;
+}
+h1{
+    color: #7987a1 !important;
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 20px;
+}
+
+button{
+    background: #21B873;
+    color: white;
+}

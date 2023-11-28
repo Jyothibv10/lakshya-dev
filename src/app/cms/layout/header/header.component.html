@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand">
+  <img [src]="imageList.hamburger" (click)="toggleSidebar()" class="menu" />
+  <img [src]="imageList.header_logo" class="header-logo" />
+
+  <div class="container-fluid">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item pe-5">
+        <img [src]="imageList.bell" class="bell" />
+      </li>
+      <li class="nav-item pe-5">
+        <img [src]="imageList.user" class="user" />
+        <span>Pradeep</span>
+      </li>
+      <li class="nav-item pe-3">
+        <img [src]="imageList.logout" class="logout" />
+        <span>Logout</span>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,155 @@
+.nav-tabs .nav-link {
+    border: 0px;
+    color: #52575C;
+    font-size: 16px;
+    line-height: 25px;
+    padding-bottom: 15px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    background: #F5F6FA;
+    line-height: 18px;
+    /* identical to box height, or 112% */
+
+
+    opacity: 0.9;
+}
+
+.nav-tabs .nav-link.active {
+    border-color: none;
+    border-bottom: 3px solid #21B873;
+    color: #21B873;
+    bottom: -3px;
+    content: " ";
+    left: 0;
+    right: 0;
+    font-weight: 700;
+    background: #F5F6FA;
+    /* Header/ H6 */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height, or 112% */
+
+
+    opacity: 0.9;
+
+}
+
+.bg {
+    background: #F5F6FA;
+    padding: 32px;
+}
+
+.nav {
+    --bs-nav-link-padding-x: 0.5rem;
+    --bs-nav-link-padding-y: 0.5rem;
+}
+
+
+.mb {
+    margin-bottom: 24px;
+}
+
+.mr {
+    margin-right: 80px;
+}
+.maindiv {
+    box-sizing: border-box;
+
+    position: initial;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #FFFFFF;
+    border: 0.75px solid #DCDCDC;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+table {
+    border-radius: 7px;
+
+    thead {
+        font-weight: 400;
+        font-size: 15px;
+        color: #000000;
+        opacity: 0.5;
+
+        tr {
+            background-color: #FBFBFB;
+            border-bottom: 1px solid #DCDCDC;
+
+        }
+
+        th {
+            padding: 15px 10px;
+        }
+    }
+
+    tbody {
+        color: #424242;
+        font-weight: 400;
+        font-size: 14px;
+
+        td {
+            padding: 12px 10px;
+            border-bottom: none;
+            padding: 10px 0px 15px 22px;
+        }
+    }
+}
+
+tr:nth-child(even) {
+    background-color: #FBFBFB;
+}
+
+.w16 {
+    width: 16%;
+    background-color: #21B873;
+}
+
+.w80 {
+    width: 94%;
+}
+
+.searchinput {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 11px 20px;
+    gap: 10px;
+    /* width: 299px; */
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C4C4C4;
+    height: 39px;
+    background: #FFFFFF;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.float-sm-right {
+    float: right!important;
+}
+
+.content-header .breadcrumb {
+    background-color: transparent;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+.createBtn{
+    float:right;
+}

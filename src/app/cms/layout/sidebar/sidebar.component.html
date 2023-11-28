@@ -1,0 +1,11 @@
+<nav class="sidebar">
+    <!-- <img [src]="imageList.header_logo" class="header-logo" /> -->
+    <div class="sidebar-body">
+        <div class="sidenav-item" *ngFor="let menu of menuList" (click)="moveToPage(menu.link)" [ngClass]="{'is-active':menu.link == activeLink}">
+            <img [src]="menu.icon" />
+            <span>{{menu.text}}</span>
+        </div>
+    </div>
+</nav>
+
+

@@ -1,0 +1,99 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Edit Courses</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Edit Courses</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-10">
+                <h3 class="card-title">Edit Courses</h3>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-primary btn-sm createBtn" routerLink="/admin/courses">back</a>
+            </div>
+        </div>
+                
+        
+        
+    </div>
+    <div class="card-body">
+        <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert" >
+    <strong>Success!</strong> Course Updated
+    <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<form [formGroup]="editCourse" (ngSubmit)="updateData()" class="editCourseForm">
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Course Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" required placeholder="course name" formControlName="courseName" [ngClass]="{ 'is-invalid': submitted && f['courseName'].errors }">
+                    <div *ngIf="submitted && f['courseName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['courseName'].errors['required']">CourseName is required</div>
+                      </div>
+                </div>
+            </div>            
+        </div>
+        </div>
+        <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Board Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="board" formControlName="board" [ngClass]="{ 'is-invalid': submitted && f['board'].errors }">
+                    <div *ngIf="submitted && f['courseName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['courseName'].errors['required']">Board is required</div>
+                      </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Year</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="4" placeholder="Year" formControlName="year" [ngClass]="{ 'is-invalid': submitted && f['year'].errors }">
+                    <div *ngIf="submitted && f['year'].errors" class="invalid-feedback">
+                        <div *ngIf="f['year'].errors['required']">Year is required</div>
+                        <div *ngIf="f['year'].errors['pattern']">Year is not valid</div>
+                      </div>
+                </div>
+            </div>            
+        </div>       
+    </div>
+    <div class="row">
+        <div class="col-sm-6 ct-btn">
+            <button type="submit" class="btn btn-primary m-2">Submit</button>
+           
+     
+      <button type="button" (click)="onReset()" class="btn btn-warning float-right m-2">Reset</button>
+    
+        </div>
+    </div>
+    
+  </form>
+  </div>
+  </div>
+  </div>
+  </section>
+
+</div>

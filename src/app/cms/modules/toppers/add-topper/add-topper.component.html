@@ -1,0 +1,165 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Add Toppers</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Add Toppers</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-10">
+                <h3 class="card-title">Add Toppers</h3>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-primary btn-sm createBtn" routerLink="/admin/toppers">back</a>
+            </div>
+        </div>
+                
+        
+        
+    </div>
+    <div class="card-body">
+        <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert" >
+    <strong>Success!</strong> Topper Added
+    <button (click)="removeMessage()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<form [formGroup]="addTopper" (ngSubmit)="saveData()" class="addTopperForm">
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Student Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" required placeholder="student name" formControlName="studentName" [ngClass]="{ 'is-invalid': submitted && f['studentName'].errors }">
+                    <div *ngIf="submitted && f['studentName'].errors" class="invalid-feedback">
+                        <div *ngIf="f['studentName'].errors['required']">studentName is required</div>
+                      </div>
+                </div>
+            </div>            
+        </div>
+        </div>
+        <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row mb-3">                
+                <label class="form-label col-sm-4 rt-label">Images</label>
+                <div class="col-sm-8">
+                    <!-- <input type="file" class="form-control" placeholder="images" formControlName="images" [ngClass]="{ 'is-invalid': submitted && f['board'].errors }"> -->
+                    <input type="file" class="form-control" accept="image/*" (change)="selectFile($event)" formControlName="images"/>
+
+                    <div *ngIf="submitted && f['images'].errors" class="invalid-feedback">
+                        <div *ngIf="f['images'].errors['required']">Images is required</div>
+                      </div>
+                      
+                </div>
+            </div>  
+            <div class="row mb-3">
+                <div class="col-sm-8 text-center">
+                    <div>
+                        <img [src]="preview" class="preview">
+                      </div>
+                      
+                      <div *ngIf="currentFile && progress" class="progress my-3">
+                        <div
+                          class="progress-bar progress-bar-info"
+                          role="progressbar"
+                          attr.aria-valuenow="{{ progress }}"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          [ngStyle]="{ width: progress + '%' }"
+                        >
+                          {{ progress }}%
+                        </div>
+                      </div>
+                      
+                      <div *ngIf="message" class="alert alert-secondary" role="alert">
+                        {{ message }}
+                      </div>
+                </div>
+                <div class="col-sm-4">                   
+                        <button type="button"
+                          class="btn btn-success btn-sm float-right"
+                          [disabled]="!selectedFiles"
+                          (click)="upload()"
+                        >
+                          Upload
+                        </button>                      
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Percentage</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" maxlength="3" placeholder="Percentage" formControlName="percentage" [ngClass]="{ 'is-invalid': submitted && f['percentage'].errors }">
+                    <div *ngIf="submitted && f['percentage'].errors" class="invalid-feedback">
+                        <div *ngIf="f['percentage'].errors['required']">Percentage is required</div>
+                        <div *ngIf="f['percentage'].errors['pattern']">Percentage is not valid</div>
+                      </div>
+                </div>
+            </div>            
+        </div>       
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-6">
+            <div class="row">                
+                <label class="form-label col-sm-4 rt-label">Overview</label>
+                <div class="col-sm-8">                    
+                    <textarea class="form-control" placeholder="Overview" formControlName="overview" [ngClass]="{ 'is-invalid': submitted && f['overview'].errors }"></textarea>
+                    <div *ngIf="submitted && f['overview'].errors" class="invalid-feedback">
+                        <div *ngIf="f['overview'].errors['required']">Overview is required</div>                        
+                    </div>
+                </div>
+            </div>            
+        </div>       
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-8">
+          <label class="btn btn-default p-0">
+          </label>
+        </div>
+      
+        
+      </div>
+      
+      
+      
+      <!-- <div class="card mt-3">
+        <div class="card-header">List of Images</div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let image of imageInfos | async" class="list-group-item">
+            <p><a href="{{ image.url }}">{{ image.name }}</a></p>
+            <img src="{{ image.url }}" alt="{{ image.name }}" height="80px" />
+          </li>
+        </ul>
+      </div> -->
+    <div class="row">
+        <div class="col-sm-6 ct-btn">
+            <button type="submit" class="btn btn-primary m-2">Submit</button>
+            <button type="button" (click)="onReset()" class="btn btn-warning float-right m-2">Reset</button>
+        </div>
+    </div>
+    
+  </form>
+  </div>
+  </div>
+  </div>
+  </section>
+
+</div>

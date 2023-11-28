@@ -1,0 +1,28 @@
+.float-sm-right {
+    float: right!important;
+}
+
+.content-header .breadcrumb {
+    background-color: transparent;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+.createBtn{
+    float:right;
+}
+
+.addCourseForm{
+    width:70%;
+    flex:auto;
+}
+
+.rt-label{
+    text-align:right;
+}
+
+.ct-btn{
+    text-align:center;
+}

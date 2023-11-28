@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "courses": [
+    {
+      "courseName": "dgdsd",
+      "board": "dsfds",
+      "year": "1024",
+      "status": "",
+      "id": 1
+    }
+  ],
+  "toppers": [
+    {
+      "studentName": "dsduoioiuoi",
+      "images": "gsdsd",
+      "percentage": "87",
+      "overview": "dadsa dasd dasd",
+      "status": "Active",
+      "id": 9
+    },
+    {
+      "studentName": "dsvd",
+      "images": "C:\\fakepath\\1469536564_atasa_002.webp",
+      "percentage": "78",
+      "overview": "dvdssdv",
+      "status": "",
+      "id": 10
+    }
+  ]
+}

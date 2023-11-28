@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Courses</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Courses</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+      <app-confirm-dialog></app-confirm-dialog> 
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-10">
+                <h3 class="card-title">Courses</h3>
+            </div>
+            <div class="col-sm-2">
+                <a class="btn btn-primary btn-sm createBtn" routerLink="/admin/courses/add">Create Course</a>
+            </div>
+        </div>
+                
+        
+        
+    </div>
+    <div class="card-body">
+<table class="table" id="datatableexample" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Board</th>
+        <th scope="col">Year</th>        
+        <th scope="col">Status</th>        
+        <th scope="col">Action</th>        
+      </tr>
+    </thead>
+    <tbody *ngIf="courseData.length">
+      <tr *ngFor="let item of courseData">
+        <td>{{item.id}}</td>
+        <td>{{item.courseName}}</td>
+        <td>{{item.board}}</td>
+        <td>{{item.year}}</td>
+        <td>
+            <span class="bg-warning" *ngIf="item.status=='InActive'  || item.status==''">In Active</span>
+            <span class="bg-success" *ngIf="item.status=='Active'">Active</span>
+        </td>
+        <td>
+           
+          <span class="btn btn-sm btn-info" (click)="editCourse(item.id)"> <i class="fa fa-edit"></i></span>&nbsp;
+          <span class="btn btn-sm btn-danger" (click)="deleteCourse(item.id)"> <i class="fa fa-trash"></i></span>&nbsp;
+          <span class="btn btn-sm btn-warning" *ngIf="item.status=='InActive' || item.status==''" (click)="updateCourseStatus(item.id,item,'Active')"><i class="fa fa-undo"></i></span>
+            <span class="btn btn-sm btn-success" *ngIf="item.status=='Active'" (click)="updateCourseStatus(item.id,item,'InActive')"><i class="fa fa-undo"></i></span>
+        </td>       
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</section>
+</div>
